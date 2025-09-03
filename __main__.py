@@ -3,6 +3,7 @@ from timetable import *
 from markit import *
 from sid import *
 import os
+import hashlib
 
 # terminal_width = os.get_terminal_size().columns
 # # os.system('clear' if os.name == 'posix' else 'cls')
@@ -24,7 +25,10 @@ import os
 email = os.getenv("EMAIL")
 password = os.getenv("PASSWORD")
 
-print("Using email from environment variable:", len(email))
+print("Using email from environment variable:", len(password))
+
+print("Email SHA256:", hashlib.sha256(email.encode()).hexdigest())
+print("Password SHA256:", hashlib.sha256(password.encode()).hexdigest())
 if not email or not password:
     print("Email and password cannot be empty.")
     exit(1)
