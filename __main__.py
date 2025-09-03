@@ -7,12 +7,16 @@ from dotenv import load_dotenv
 load_dotenv()
 
 terminal_width = os.get_terminal_size().columns
-os.system('clear' if os.name == 'posix' else 'cls')
+# os.system('clear' if os.name == 'posix' else 'cls')
 pilcrow = "¶"
 padding = (terminal_width - len(pilcrow)) // 2
 centered_pilcrow = " " * padding + pilcrow
 
 print("\n"+centered_pilcrow+"\n")
+
+print("Welcome to Camuflaged v1.5.0 - gregnald\n".center(terminal_width, " "))
+print("(Press Ctrl+C to exit)\n".center(terminal_width, " "))
+print("For educational purposes only".center(terminal_width, "-"))
 
 # print("Enter your college email: ",end="")
 # email = input().strip()
@@ -25,6 +29,11 @@ password = os.getenv("PASSWORD")
 if not email or not password:
     print("Email and password cannot be empty.")
     exit(1)
+
+
+
+
+    
 
 if(login(email,password)):
     print("Login successful!")
