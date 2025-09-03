@@ -2,14 +2,14 @@ name: Run Script in Shifts
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # 8:30 AM IST (03:00 UTC)
-    - cron: "0 9 * * *"   # 2:30 PM IST (09:00 UTC)
+    - cron: "0 3 * * *"  # 8:30 AM IST (03:00 UTC)
+    - cron: "0 9 * * *"  # 2:30 PM IST (09:00 UTC)
   workflow_dispatch:
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
-    timeout-minutes: 360   # 6 hours per run
+    timeout-minutes: 360  # 6 hours per run
     env:
       EMAIL: ${{ secrets.EMAIL }}
       PASSWORD: ${{ secrets.PASSWORD }}
@@ -24,7 +24,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+
+      - name: Debug environment (optional)
+        run: |
+          echo "EMAIL: $EMAIL"
+          echo "PASSWORD: $PASSWORD"
 
       - name: Run script
         run: python __main__.py
