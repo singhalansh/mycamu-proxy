@@ -26,6 +26,7 @@ load_dotenv()
 email = os.getenv("EMAIL")
 password = os.getenv("PASSWORD")
 
+print("Using email from environment variable:", email)
 if not email or not password:
     print("Email and password cannot be empty.")
     exit(1)
