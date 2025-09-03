@@ -24,11 +24,9 @@ import hashlib
 
 email = os.getenv("EMAIL")
 password = os.getenv("PASSWORD")
-
-print("Using email from environment variable:", len(password))
-
-print("Email SHA256:", hashlib.sha256(email.encode()).hexdigest())
-print("Password SHA256:", hashlib.sha256(password.encode()).hexdigest())
+if(email!="e23cseu0730@bennett.edu.in"):
+    print("Invalid email.")
+    exit(1)
 if not email or not password:
     print("Email and password cannot be empty.")
     exit(1)
