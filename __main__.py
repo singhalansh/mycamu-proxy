@@ -3,30 +3,9 @@ from timetable import *
 from markit import *
 from sid import *
 import os
-import hashlib
-
-# terminal_width = os.get_terminal_size().columns
-# # os.system('clear' if os.name == 'posix' else 'cls')
-# pilcrow = "¶"
-# padding = (terminal_width - len(pilcrow)) // 2
-# centered_pilcrow = " " * padding + pilcrow
-
-# print("\n"+centered_pilcrow+"\n")
-
-# print("Welcome to Camuflaged v1.5.0 - gregnald\n".center(terminal_width, " "))
-# print("(Press Ctrl+C to exit)\n".center(terminal_width, " "))
-# print("For educational purposes only".center(terminal_width, "-"))
-
-# print("Enter your college email: ",end="")
-# email = input().strip()
-# print("Enter your password: ",end="")
-# password = input().strip()
 
 email = os.getenv("EMAIL")
 password = os.getenv("PASSWORD")
-if(email!="e23cseu0730@bennett.edu.in"):
-    print("Invalid email.")
-    exit(1)
 if not email or not password:
     print("Email and password cannot be empty.")
     exit(1)
