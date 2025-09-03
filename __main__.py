@@ -3,8 +3,6 @@ from timetable import *
 from markit import *
 from sid import *
 import os
-from dotenv import load_dotenv
-load_dotenv()
 
 # terminal_width = os.get_terminal_size().columns
 # # os.system('clear' if os.name == 'posix' else 'cls')
