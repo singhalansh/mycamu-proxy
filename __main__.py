@@ -24,7 +24,7 @@ import os
 email = os.getenv("EMAIL")
 password = os.getenv("PASSWORD")
 
-print("Using email from environment variable:", email)
+print("Using email from environment variable:", len(email))
 if not email or not password:
     print("Email and password cannot be empty.")
     exit(1)
