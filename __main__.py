@@ -6,17 +6,17 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-terminal_width = os.get_terminal_size().columns
-# os.system('clear' if os.name == 'posix' else 'cls')
-pilcrow = "¶"
-padding = (terminal_width - len(pilcrow)) // 2
-centered_pilcrow = " " * padding + pilcrow
+# terminal_width = os.get_terminal_size().columns
+# # os.system('clear' if os.name == 'posix' else 'cls')
+# pilcrow = "¶"
+# padding = (terminal_width - len(pilcrow)) // 2
+# centered_pilcrow = " " * padding + pilcrow
 
-print("\n"+centered_pilcrow+"\n")
+# print("\n"+centered_pilcrow+"\n")
 
-print("Welcome to Camuflaged v1.5.0 - gregnald\n".center(terminal_width, " "))
-print("(Press Ctrl+C to exit)\n".center(terminal_width, " "))
-print("For educational purposes only".center(terminal_width, "-"))
+# print("Welcome to Camuflaged v1.5.0 - gregnald\n".center(terminal_width, " "))
+# print("(Press Ctrl+C to exit)\n".center(terminal_width, " "))
+# print("For educational purposes only".center(terminal_width, "-"))
 
 # print("Enter your college email: ",end="")
 # email = input().strip()
