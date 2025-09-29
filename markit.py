@@ -49,17 +49,17 @@ async def mark_attendance(session_id: str, attendance_id: str, student_id: str,
         "offQrCdEnbld": True
     }
 
-    if verbose:
-        print("POST", url)
-        print("HEADERS:", headers)
-        print("PAYLOAD:", payload)
+    # if verbose:
+    #     print("POST", url)
+    #     print("HEADERS:", headers)
+    #     print("PAYLOAD:", payload)
 
     try:
         async with httpx.AsyncClient(timeout=timeout) as client:
             resp = await client.post(url, headers=headers, json=payload)
-            if verbose:
-                print("HTTP", resp.status_code)
-                print("RESPONSE HEADERS:", dict(resp.headers))
+            # if verbose:
+            #     print("HTTP", resp.status_code)
+            #     print("RESPONSE HEADERS:", dict(resp.headers))
             text = resp.text
             data = None
             try:
@@ -68,8 +68,8 @@ async def mark_attendance(session_id: str, attendance_id: str, student_id: str,
                 if verbose:
                     print("[WARN] Non-JSON response:", text[:1000])
 
-            if verbose:
-                print("RESPONSE JSON (parsed):", data)
+            # if verbose:
+            #     print("RESPONSE JSON (parsed):", data)
 
             # Flexible checks:
             if isinstance(data, dict):
@@ -115,9 +115,9 @@ async def mark_attendance(session_id: str, attendance_id: str, student_id: str,
                 if data.get("marked") is True or data.get("success") is True:
                     return True
 
-            # if we reached here, consider it a failure
-            if verbose:
-                print("[INFO] Attendance not marked. Full response:", data or text)
+            # # if we reached here, consider it a failure
+            # if verbose:
+            #     print("[INFO] Attendance not marked. Full response:", data or text)
             return False
 
     except Exception as e:

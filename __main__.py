@@ -67,9 +67,9 @@ async def autc():
             if tasks:
                 await asyncio.gather(*tasks)
                 response = fetch_timetable_headerless(sid, json_payload)
-                print("Timetable periods:", json.dumps(response["output"]["data"][0]["Periods"], indent=2))
-                print("\n\n")
-                print("Attendance marked successfully.")
+                # print("Timetable periods:", json.dumps(response["output"]["data"][0]["Periods"], indent=2))
+                # print("\n\n")
+                # print("Attendance marked successfully.")
                 print("\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n")
             await asyncio.sleep(1)
         except TimeoutError:
