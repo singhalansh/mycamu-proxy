@@ -37,8 +37,30 @@ def fetch_timetable_headerless(sid, json_payload):
         return None
 
 # with open('user_data.json','r') as f:
-#     data = json.load(f)
-#     sid = data['sid']
-#     json_payload = data['data']['progressionData'][0]
+    # data = json.load(f)
+    # sid = data['sid']
+    # json_payload = data['data']['progressionData'][0]
 
-#     print(fetch_timetable_headerless(sid,json_payload))
+    # raw_data = fetch_timetable_headerless(sid,json_payload)
+        
+    # def parse_timetable(raw):
+    #     periods = raw['output']['data'][0]['Periods']
+    #     timetable = []
+
+    #     for p in periods:
+    #         timetable.append({
+    #             "Start": datetime.fromisoformat(p['start']).strftime("%H:%M"),
+    #             "End": datetime.fromisoformat(p['end']).strftime("%H:%M"),
+    #             "Subject": p['SubNa'],
+    #             "Staff": p['StaffNm'],
+    #             "Location": p['Location'],
+    #             "AttendanceSaved": p.get('isAttendanceSaved', False)
+    #         })
+
+    #     return timetable
+
+    # clean_tt = parse_timetable(raw_data)
+
+    # # Pretty print
+    # for period in clean_tt:
+    #     print(f"{period['Start']} - {period['End']}: {period['Subject']} with {period['Staff']} at {period['Location']}, Attendance Saved: {period['AttendanceSaved']}")
